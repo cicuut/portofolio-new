@@ -1,0 +1,1160 @@
+@import url("https://fonts.googleapis.com/css2?family=Alice&family=La+Belle+Aurore&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+/* Added CSS variables for skill items to define size */
+:root {
+  --itemWidth: 100px;
+  --itemWidthMinus: 60px;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  padding: 0; /* Pastikan ini sudah 0 */
+  min-width: 100vw;
+  min-height: 100vh;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.navbar {
+  align-items: center;
+  width: 100%;
+  display: flex;
+  position: fixed;
+  z-index: 1000;
+  justify-content: space-between;
+  height: 60px;
+  transition: background-color 0.8s ease-out;
+  background-color: transparent;
+}
+.navbar-section-title {
+    width: 60%;
+  font-size: 13px;
+  margin-top: 0;
+  text-align: center;
+  margin-bottom: 0;
+}
+.navbar.scrolled {
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+.navbar-name {
+  display: flex;
+  width: 33%;
+  padding-left: 20px;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+  text-align: left;
+  color: rgb(0, 0, 0);
+}
+
+.navbar-name h1 {
+  font-family: "Alice", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+}
+.navbar-menu-section {
+  text-align: right;
+  width: 33%;
+  padding-right: 20px;
+}
+.navbar-menu {
+  color: white;
+  padding: 0px 10px 0 10px;
+  border-radius: 30px;
+  display: inline-block;
+  height: 40px;
+  flex-direction: row;
+  background-color: rgb(0, 0, 0);
+  align-items: center;
+
+  cursor: pointer;
+  position: relative;
+}
+
+.navbar-menu-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+  padding: 0px 10px 0 10px;
+  gap: 5px;
+}
+
+.dropdown-menu .download-cv {
+  background-color: #f2f2f2;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  text-align: center;
+  margin: 10px;
+  border-radius: 50px;
+  margin-top: 5px;
+  border-bottom: none;
+}
+.navbar-menu h1 {
+  font-family: "Alice", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+}
+
+.download-cv a {
+  color: #000000;
+  text-decoration: none;
+}
+.dropdown-menu {
+  display: block;
+  position: absolute;
+  background-color: #000000;
+  min-width: 160px;
+  right: 5px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  list-style-type: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+  border-radius: 20px;
+}
+
+.dropdown-menu li {
+  text-align: center;
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  font-family: "Lato", sans-serif;
+  display: block;
+  cursor: pointer;
+}
+
+.dropdown-menu li + li {
+  border-top: 1px solid #e0e0e0;
+}
+.home {
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.home-1 {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.home-image {
+  display: flex;
+  justify-content: center;
+  order: 2;
+  width: 33%;
+}
+
+.self-image {
+  width: 350px;
+  height: auto;
+  margin-top: -80px;
+  top: 0;
+  right: 40;
+  z-index: 0;
+  text-align: center;
+}
+
+.home-about-me {
+  width: 33%;
+  order: 1;
+  display: flex;
+  flex-direction: column;
+  padding-left: 30px;
+}
+.home-about-me h1 {
+  font-size: 35px;
+  font-family: "La Belle Aurore", cursive;
+  font-weight: 400;
+  margin-bottom: 0px;
+  font-style: normal;
+}
+.home-about-me-name {
+  font-size: 20px;
+  font-family: "Alice", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.home-about-me-cica {
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgb(0, 0, 0);
+  letter-spacing: 5px;
+}
+.home-about-me-tagline {
+  z-index: 1;
+}
+
+.home-about-me p {
+  margin-top: 0;
+  font-size: 15px;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  z-index: 1;
+  font-style: normal;
+}
+.home-about-web-dev {
+  font-family: "La Belle Aurore", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 32px;
+}
+
+.home-about-me-contact-me {
+  background-color: black;
+  border-radius: 30px;
+  color: white;
+  padding: 10px;
+  width: 150px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  z-index: 1;
+}
+
+.home-numbers {
+  width: 33%;
+  display: flex;
+  order: 3;
+  z-index: 1;
+  flex-direction: column;
+  text-align: right;
+  font-family: "Alice", serif;
+  font-style: normal;
+  margin-right: 30px;
+}
+
+.home-numbers p {
+  margin-top: 0;
+  font-size: 20px;
+  margin-bottom: 0;
+}
+.home-numbers h4 {
+  margin-bottom: -10px;
+  font-size: 25px;
+  margin-top: 10px;
+}
+
+.about-me-works {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  gap: 25px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.about-me-works p {
+  text-align: justify;
+  font-size: 13px;
+  margin-top: 0;
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+}
+
+.about-me-works h2 {
+  font-family: "Lato", sans-serif;
+  font-size: 18px;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.web-development {
+  display: flex;
+  flex-direction: column;
+  padding-right: 30px;
+  border-right: 2px solid rgb(0, 0, 0);
+}
+
+.mobile-development {
+  padding-right: 30px;
+  border-right: 2px solid rgb(0, 0, 0);
+}
+
+.risk-assessment {
+  padding-right: 30px;
+  border-right: 2px solid rgb(0, 0, 0);
+}
+.skills {
+  margin-top: 80px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+}
+
+.skills h1 {
+  font-family: "Lato", sans-serif;
+  font-size: 40px;
+}
+.skills-image {
+  width: 80%;
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: center;
+  align-self: center;
+  justify-content: center;
+}
+
+.skill-item {
+  box-shadow: inset var(--itemWidthMinus) var(--itemWidthMinus) 0
+      rgb(255, 255, 255),
+    inset var(--itemWidth) var(--itemWidthMinus) 0 #eae2d7,
+    inset var(--itemWidthMinus) var(--itemWidth) 0 #d9d9d9,
+    inset var(--itemWidth) var(--itemWidth) 0 #d9d9d9, 0 0 20px silver;
+  transition: box-shadow ease-in-out 0.6s, color ease-in-out 0.5s;
+  width: var(--itemWidth);
+  height: var(--itemWidth);
+  border-radius: 50%;
+  text-align: center;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  color: white;
+  font-size: calc(var(--itemWidth) / 7);
+  grid-row: 2 / 3;
+}
+
+.skill-item:hover {
+  box-shadow: inset 0 0 0 transparent, inset 0 0 0 transparent,
+    inset 0 0 0 transparent, inset 0 0 0 transparent, 0 0 20px silver;
+  color: transparent;
+}
+.skill-item img {
+  width: auto;
+  height: 40px;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+.skill-item .skill-title {
+  position: absolute; /* Position over the image */
+  opacity: 0; /* Hidden by default */
+  color: #333; /* Color you want the title to be */
+  text-transform: capitalize; /* Optional: Make the title look nice */
+  font-weight: bold;
+  pointer-events: none; /* Prevents the title from blocking hover events */
+  transition: opacity 0.3s ease-in-out;
+}
+.skill-item:hover {
+  box-shadow: inset 0 0 0 transparent, inset 0 0 0 transparent,
+    inset 0 0 0 transparent, inset 0 0 0 transparent, 0 0 20px silver;
+  /* Don't set color: transparent; here */
+}
+
+.skill-item:hover img {
+  opacity: 0; /* Fades out the image */
+}
+
+.skill-item:hover .skill-title {
+  opacity: 1; /* Fades in the title */
+}
+
+.soft-skills {
+  display: flex;
+  flex-wrap: wrap;
+  width: 60%;
+  gap: 30px;
+  row-gap: 0px;
+  justify-content: center;
+  font-family: "Lato", sans-serif;
+  align-self: center;
+  font-size: 13px;
+}
+
+.soft-skills-a {
+  padding: 5px 20px 5px 20px;
+  background-color: #d9d9d9;
+  border-radius: 20px;
+}
+
+.soft-skills-b {
+  padding: 5px 20px 5px 20px;
+  background-color: #eae2d7;
+  border-radius: 20px;
+}
+
+.projects {
+  margin-top: 50px;
+
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  justify-content: center;
+  align-items: center;
+}
+
+.project img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0px 0px 50px 0px;
+}
+
+.projects-showcase {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.project {
+  position: relative;
+  overflow: hidden;
+  width: 300px;
+  height: 210px;
+  border-radius: 40px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+.detail {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px; /* Ini tinggi 'collapsed' (saat belum diklik) */
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  justify-content: center;
+  text-align: left;
+  padding-left: 20px;
+  border-radius: 0px 40px 0 0;
+  transition: height 0.4s ease-in-out;
+  overflow: hidden;
+}
+
+.detail h3 {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+.detail p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.project-clicked {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  height: 60%;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding-left: 1.4rem;
+  padding-right: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: justify;
+  opacity: 0;
+  gap: 0px;
+  transform: translateY(100px);
+  transition: all 0.3s ease-in-out;
+  pointer-events: none;
+  font-size: 10px;
+  border-radius: 40px 40px 0 0;
+}
+
+.project-desc {
+  margin-bottom: 0px;
+  padding-top: 2px;
+}
+
+.project-github {
+  text-align: right;
+  padding-right: 5px;
+}
+
+.work.hover .detail {
+  height: 40%;
+}
+
+.work.hover .detail h3,
+.work.hover .detail > p {
+  display: none;
+}
+
+.work.hover .project-clicked {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.experiences {
+  margin-top: 50px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  justify-content: center;
+  align-items: center;
+}
+
+.experiences ul {
+  display: flex;
+  flex-direction: row;
+  padding-left: 0;
+  list-style: none;
+  gap: 40px;
+}
+
+.experiences-navbar {
+  border-bottom: 2px solid black;
+  width: 100%;
+  justify-content: center;
+  display: flex;
+}
+
+.experiences-navbar li {
+  cursor: pointer;
+}
+.experiences-navbar li.active {
+  border-bottom: 2px solid black;
+  font-weight: 500;
+}
+
+.experiences-content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 25px;
+  row-gap: 10px;
+  margin-top: 5px;
+  justify-content: center;
+}
+
+.experience-card-title {
+  margin-bottom: 0px;
+  margin-top: 0px;
+  font-size: 13px;
+}
+
+.experience-card-subtitle {
+  font-size: 11px;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: 500;
+  text-align: left;
+}
+
+.experience-card-desc {
+  font-size: 10px;
+  text-align: left;
+  display: -webkit-box; /* Enables the flexible box model for WebKit browsers */
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical; /* Specifies the orientation of the box */
+  overflow: hidden;
+
+  overflow: hidden; /* Hides any text that overflows the container */
+  text-overflow: ellipsis; /* Displays an ellipsis (...) to indicate truncated text */
+}
+
+.experience-card {
+  cursor: pointer;
+  width: 270px;
+  height: 135px;
+  border: 2px solid black;
+  border-radius: 7px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 0px;
+  padding: 5px;
+}
+
+/* Modal Styles */
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal-content {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 32px;
+  max-width: 700px;
+  width: 90%;
+  max-height: 60vh;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  box-shadow: 0 15px 20px -5px silver;
+  animation: slideUp 0.3s ease-out;
+  position: relative;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #6b7280;
+  transition: color 0.2s ease;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-close-btn:hover {
+  color: #111827;
+}
+
+.modal-title {
+  font-size: 20px;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: "Lato", sans-serif;
+}
+
+.modal-subtitle {
+  font-size: 15px;
+  margin-top: 0;
+  margin-bottom: 0;
+
+  font-family: "Lato", sans-serif;
+}
+.modal-description-section {
+  font-size: 15px;
+  margin-top: 0;
+  margin-bottom: 0;
+  text-align: justify;
+  font-family: "Lato", sans-serif;
+}
+.modal-images-grid {
+  display: flex;
+  gap: 16px;
+  overflow-x: scroll;
+  scrollbar-width: none;
+}
+
+.modal-image {
+  width: auto;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.contact-me {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.personal-info {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 10px;
+  font-size: 14px;
+  margin-bottom: 14px;
+}
+
+.contact-me-left {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.contact-me-left p {
+  font-size: 14px;
+  margin-top: 0;
+  font-family: "Lato", sans-serif;
+}
+
+.social-media {
+  display: flex;
+  flex-direction: column;
+}
+
+.social-media-icons {
+  display: flex;
+  gap: 20px;
+}
+
+.social-media-icons a {
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  color: #ffffff;
+  background-color: #000000;
+  padding: 0.3rem;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inputBox {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-me-right {
+  background-color: white;
+  width: 400px;
+  padding: 30px;
+  border-radius: 30px;
+}
+
+.inputField {
+  display: flex;
+  gap: 15px;
+}
+
+.inputField input {
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  height: 25px;
+  width: 100%;
+  padding: 5px;
+  font-family: "Lato", sans-serif;
+}
+.message {
+  display: flex;
+}
+.message textarea {
+  width: 100%;
+  height: auto;
+  resize: none;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  outline: none;
+  background-color: #f2f2f2;
+  font-family: "Lato", sans-serif;
+}
+
+.btnemail {
+  background-color: #000000;
+  color: white;
+  font-family: "Lato", sans-serif;
+  width: 100%;
+  height: 40px;
+  border-radius: 30px;
+  margin-top: 20px;
+}
+.footer {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-family: "Rubik";
+}
+
+.footer h3 {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.footer p {
+  margin-top: 0;
+}
+
+.social-media-footer {
+  display: flex;
+  gap: 10px;
+  align-self: center;
+}
+
+.social-media-footer a {
+  color: #000000;
+}
+.license {
+  font-family: "Lato", sans-serif;
+  display: flex;
+  margin-top: 0;
+  font-size: 12px;
+  justify-content: center;
+}
+
+@media (max-width: 600px) {
+  .navbar-section-title {
+    font-size: 9px;
+  }
+
+  .navbar-name h1 {
+    font-size: 15px;
+  }
+
+  .navbar-menu {
+    padding: 0px 0px 0 0px;
+    height: 33px;
+  }
+
+  .dropdown-menu .download-cv {
+    margin: 10px;
+    padding: 8px;
+    margin-top: 0;
+  }
+  .navbar-menu h1 {
+    font-size: 15px;
+  }
+
+  .home-1 {
+    flex-direction: column;
+    align-items: center;
+    gap: 0px;
+  }
+  .home-image {
+    order: -1;
+    width: 75%;
+  }
+  .self-image {
+    width: 100%;
+  }
+
+  .home-about-me {
+    width: 80%;
+    text-align: center;
+    order: 0;
+    padding-left: 0;
+  }
+  .home-about-me-tagline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .home-about-me h1 {
+    font-size: 30px;
+  }
+  .home-about-me-name {
+    font-size: 20px;
+  }
+  .home-about-me p {
+    font-size: 15px;
+  }
+  .home-about-web-dev {
+    font-size: 30px;
+  }
+
+  .home-about-me-contact-me {
+    width: 180px;
+    gap: 20px;
+  }
+
+  .contact-me-text {
+    font-size: 15px;
+  }
+
+  .home-numbers {
+    justify-content: center;
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0px;
+    margin-right: 0;
+  }
+
+  .home-numbers div {
+    text-align: center;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+  }
+  .home-numbers p {
+    font-size: 15px;
+  }
+  .home-numbers h4 {
+    font-size: 20px;
+  }
+
+  .about-me-works {
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 25px;
+  }
+  .about-me-works div {
+    width: 45%;
+  }
+  .about-me-works p {
+    text-align: center;
+    font-size: 10px;
+  }
+
+  .about-me-works h2 {
+    font-size: 12px;
+  }
+
+  .mobile-development {
+    border-right: none;
+    padding-right: 0px;
+  }
+  .skills {
+    width: 100%;
+    margin-top: 50px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .skills h1 {
+    font-size: 20px;
+    margin-bottom: 0;
+  }
+  .skills-image {
+    gap: 10px;
+  }
+
+  .skill-item {
+    width: 70px;
+    height: 70px;
+  }
+
+  .skill-item img {
+    width: 40px;
+    border-radius: 0;
+    height: auto;
+  }
+
+  .soft-skills {
+    width: 90%;
+    gap: 3px;
+    row-gap: 0px;
+    padding: 3px;
+    font-size: 10px;
+  }
+
+  .experiences ul {
+    width: 80%;
+    gap: 0;
+  }
+
+  .experiences-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 25px;
+    row-gap: 10px;
+    margin-top: px;
+    justify-content: center;
+  }
+
+  .experience-card-title {
+    margin-bottom: 0px;
+    margin-top: 0px;
+    font-size: 13px;
+  }
+
+  .experience-card-subtitle {
+    font-size: 11px;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: 500;
+    text-align: left;
+  }
+
+  .experience-card-desc {
+    font-size: 10px;
+    text-align: left;
+  }
+
+  .experience-card {
+    cursor: pointer;
+    width: 270px;
+    height: 135px;
+    border: 2px solid black;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 0px;
+    padding: 5px;
+  }
+
+  .contact-me {
+    margin-top: 100px;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .contact-info {
+    display: flex;
+  }
+
+  .personal-info {
+    width: 80%;
+  }
+
+  .contact-me-left {
+    text-align: justify;
+    width: 80%;
+  }
+
+  .social-media {
+    align-items: center;
+    text-align: center;
+  }
+
+  .social-media-icons {
+    gap: 10px;
+  }
+
+  .inputBox {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact-me-right {
+    width: 90%;
+    padding: 25px;
+  }
+
+  .inputField input {
+    height: 30px;
+  }
+
+  .footer h3 {
+    margin-bottom: 0;
+    margin-top: 0;
+    font-size: 15px;
+  }
+
+  .footer p {
+    margin-top: 0;
+    font-size: 13px;
+  }
+
+  .license {
+    font-size: 10px;
+  }
+}
+
+/* Styles for screens 601px wide and up (e.g., tablets and larger) */
+@media screen and (max-width: 920px) and (min-width: 601px) {
+  .navbar-section-title {
+
+  font-size: 12px;
+ 
+}
+  .home-about-me-cica {
+    z-index: 2;
+    position: relative;
+  }
+  .self-image {
+    position: absolute;
+    top: 0;
+    z-index: 0;
+    margin-top: 0;
+  }
+
+  .contact-me {
+    padding-left: 20px;
+    padding-right: 20px;
+    gap: 10px;
+  }
+
+  .inputBox {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .contact-me-right {
+    padding: 26px;
+  }
+
+  .inputField {
+    display: flex;
+    gap: 15px;
+  }
+
+  .inputField input {
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    height: 25px;
+    width: 100%;
+    padding: 5px;
+    font-family: "Lato", sans-serif;
+  }
+  .message {
+    display: flex;
+  }
+  .message textarea {
+    width: 100%;
+    height: auto;
+    resize: none;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    outline: none;
+    background-color: #f2f2f2;
+    font-family: "Lato", sans-serif;
+  }
+
+  .btnemail {
+    background-color: #000000;
+    color: white;
+    font-family: "Lato", sans-serif;
+    width: 100%;
+    height: 40px;
+    border-radius: 30px;
+    margin-top: 20px;
+  }
+}
