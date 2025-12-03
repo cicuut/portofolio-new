@@ -558,7 +558,6 @@
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical; /* Specifies the orientation of the box */
   overflow: hidden;
-
   overflow: hidden; /* Hides any text that overflows the container */
   text-overflow: ellipsis; /* Displays an ellipsis (...) to indicate truncated text */
 }

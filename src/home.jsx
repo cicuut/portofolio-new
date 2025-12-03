@@ -520,6 +520,7 @@ const Home = () => {
   const projectsRef = useRef(null);
   const experiencesRef = useRef(null); // Nama yang benar
   const contactRef = useRef(null);
+  const dragStartRef = useRef(0);
 
   // Efek untuk IntersectionObserver (Sudah Benar)
   useEffect(() => {
@@ -567,7 +568,6 @@ const Home = () => {
   }, []); // Dijalankan sekali saat mount
   const handleOptionClick = (value) => {
     console.log(`Selected: ${value}`);
-    // setIsOpen(false); // <-- INI DIHAPUS, Navbar sudah menutup dirinya sendiri
     let targetRef = null;
     switch (value) {
       case "Home":
@@ -579,8 +579,8 @@ const Home = () => {
       case "Projects":
         targetRef = projectsRef;
         break;
-      case "Experiences": // <-- NAMA DIPERBAIKI (sebelumnya "Experiances")
-        targetRef = experiencesRef; // <-- TYPO DIPERBAIKI
+      case "Experiences":
+        targetRef = experiencesRef;
         break;
       case "Contact me":
         targetRef = contactRef;
@@ -600,22 +600,23 @@ const Home = () => {
     }
   };
   const handleMouseDown = (e) => {
-    e.preventDefault();
+    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+    dragStartRef.current = clientX;
     setIsDragging(true);
   };
 
   useEffect(() => {
     const handleMouseMove = (e) => {
       if (!isDragging) return;
+      const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+      // 4. Calculate distance: Current Point - Start Point
+      let newX = clientX - dragStartRef.current;
 
-      setIconPositionX((prevX) => {
-        const newX = prevX + e.movementX;
-        const minX = 0;
+      // 5. Clamp the values (Don't go below 0 or above maxX)
+      if (newX < 0) newX = 0;
+      if (newX > maxX) newX = maxX;
 
-        if (newX < minX) return minX;
-        if (newX > maxX) return maxX;
-        return newX;
-      });
+      setIconPositionX(newX);
     };
 
     const handleMouseUp = () => {
@@ -633,13 +634,17 @@ const Home = () => {
 
     window.addEventListener("mousemove", handleMouseMove);
     window.addEventListener("mouseup", handleMouseUp);
+    window.addEventListener("touchmove", handleMouseMove);
+    window.addEventListener("touchend", handleMouseUp);
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("mouseup", handleMouseUp);
+      window.removeEventListener("touchmove", handleMouseMove);
+      window.removeEventListener("touchend", handleMouseUp);
     };
   }, [isDragging, maxX]);
-  // Fungsi untuk membuka modal (diteruskan ke ExperienceCard)
+
   const handleCardClick = (experience) => {
     setSelectedExperience(experience);
   };
@@ -712,6 +717,7 @@ const Home = () => {
                     transition: isDragging ? "none" : "transform 0.3s ease-out",
                   }}
                   onMouseDown={handleMouseDown}
+                  onTouchStart={handleMouseDown}
                 />
                 <span
                   className="contact-me-text"
@@ -747,7 +753,7 @@ const Home = () => {
               <h4>
                 <CountUp
                   from={0}
-                  to={6}
+                  to={8}
                   separator=","
                   direction="up"
                   duration={1}
@@ -827,9 +833,11 @@ const Home = () => {
           <Skills image="/javascript.png" title="javascript" />
           <Skills image="/tailwind.png" title="tailwind  CSS" />
           <Skills image="/react.png" title="react js" />
+          <Skills image="/angular.png" title="angular js" />
           <Skills image="/php.png" title="php" />
           <Skills image="/laravel.png" title="laravel" />
           <Skills image="/python.png" title="python" />
+          <Skills image="/flask.png" title="flask" />
           <Skills image="/sqllite.png" title="sqlite" />
           <Skills image="/mysql.png" title="mysql" />
           <Skills image="/mongodb.png" title="mongo db" />
@@ -903,6 +911,21 @@ const Home = () => {
             desc="Developed my personal portfolio as a responsive single-page application using React.js and Tailwind CSS. To create a dynamic and engaging user experience, I implemented various interactive UI animations (such as those found on ReactBits) to build a polished, modern interface."
             link="https://github.com/cicuut/cica-porto"
           />
+           <Project
+            image="/sales-chat.png"
+            title="Sales Agent AI"
+            brief="An agent chatbot web application"
+            desc="Developed a web-based sales agent chatbot using Angular for the frontend and Flask for the backend. Integrated with the Mistral API to provide intelligent responses, helping users analyze sales data within a DataFrame."
+            link="https://github.com/cicuut/cica-porto"
+          />
+
+          <Project
+            image="/melomaniac.png"
+            title="Melomaniac"
+            brief="A notes + music web application"
+            desc="Developed a MERN stack web application that integrates with the Spotify API, allowing users to attach music tracks to digital notes. Engineered a unique ID retrieval system, enabling users to generate shareable codes to search, track, and view specific notes instantly"
+            link="https://github.com/cicuut/cica-porto"
+          />
         </div>
       </section>
       <section className="experiences" ref={experiencesRef}>
@@ -932,7 +955,7 @@ const Home = () => {
           )}
         </div>
       </section>
-      <section className="contact-me" ref={contactRef}>
+      <section className="contact-me" id="contact-me" ref={contactRef}>
         <div className="contact-me-left">
           <p>
             I'm currently on the lookout for new job opportunities! If you have
@@ -1032,7 +1055,7 @@ const Home = () => {
         </div>
       </section>
       <hr />
-      <section className="footer" id="contact-me">
+      <section className="footer">
         <h3>Isya Maghfira Zalfa | Cica | Cicut </h3>
         <p>
           Informatics student | Cybersecurity enthusiast | Always curious,
