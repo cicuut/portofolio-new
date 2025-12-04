@@ -896,7 +896,13 @@ const Home = () => {
             desc="designed for assessing risks and managing threat intelligence. I contributed to both the frontend and backend development, ensuring a seamless user experience and efficient data processing. The application utilizes MongoDB for data storage and integrates with the MISP API to provide real-time threat intelligence."
             link="https://github.com/cicuut/Stepcure101"
           />
-
+          <Project
+            image="/riskassessment.png"
+            title="Risk Assessment"
+            brief="Information Security & Regulatory Compliance Report"
+            desc="Executed a comprehensive Information Security Risk Assessment for the launch of 'CashE,' ensuring alignment with OJK regulations and ISO 27001/27005 standards. Delivered a formal risk treatment plan to enhance governance and mitigate potential security threats."
+            link="https://docs.google.com/spreadsheets/d/1lEsrhZ5oyKf_LqV8d2N4m06heJ1NT-G_/edit?usp=drive_link&ouid=103066419430695712805&rtpof=true&sd=true"
+          />
           <Project
             image="/moodly.jpg"
             title="Moodly"
@@ -911,20 +917,13 @@ const Home = () => {
             desc="Developed my personal portfolio as a responsive single-page application using React.js and Tailwind CSS. To create a dynamic and engaging user experience, I implemented various interactive UI animations (such as those found on ReactBits) to build a polished, modern interface."
             link="https://github.com/cicuut/cica-porto"
           />
-           <Project
-            image="/sales-chat.png"
-            title="Sales Agent AI"
-            brief="An agent chatbot web application"
-            desc="Developed a web-based sales agent chatbot using Angular for the frontend and Flask for the backend. Integrated with the Mistral API to provide intelligent responses, helping users analyze sales data within a DataFrame."
-            link="https://github.com/cicuut/cica-porto"
-          />
 
           <Project
             image="/melomaniac.png"
             title="Melomaniac"
             brief="A notes + music web application"
             desc="Developed a MERN stack web application that integrates with the Spotify API, allowing users to attach music tracks to digital notes. Engineered a unique ID retrieval system, enabling users to generate shareable codes to search, track, and view specific notes instantly"
-            link="https://github.com/cicuut/cica-porto"
+            link="https://github.com/cicuut/melomaniac"
           />
         </div>
       </section>
